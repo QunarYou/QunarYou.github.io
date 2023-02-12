@@ -16,23 +16,23 @@
   <meta name="author" content="xueping.you">
   <meta name="keywords" content="">
   
-    <meta name="description" content="@TOC 1.购买阿里云主机地区选择境外：香港 配置可以都选择最低配 需要公网ip  2.配置ssh登录主机https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;54643053 https:&#x2F;&#x2F;blog.csdn.net&#x2F;liujiakunit&#x2F;article&#x2F;details&#x2F;45849095  3.环境安装12345678910111213141516171819202122232425g">
+    <meta name="description" content="How to copy file to local system?##Use nc(NetCat) Command （Not Security）Server side 1cat backup.iso | pv -b &gt; nc -l 3333 Client side 1nc 192.168.0.1 3333 | pv -b &gt; backunp.iso ps: nc also can us">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shadowsocks-安装指南">
-<meta property="og:url" content="http://example.com/2023/02/12/shadowsocks-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:title" content="linux远程文件传输命令">
+<meta property="og:url" content="http://example.com/2023/02/12/linux%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="天气有点热">
-<meta property="og:description" content="@TOC 1.购买阿里云主机地区选择境外：香港 配置可以都选择最低配 需要公网ip  2.配置ssh登录主机https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;54643053 https:&#x2F;&#x2F;blog.csdn.net&#x2F;liujiakunit&#x2F;article&#x2F;details&#x2F;45849095  3.环境安装12345678910111213141516171819202122232425g">
+<meta property="og:description" content="How to copy file to local system?##Use nc(NetCat) Command （Not Security）Server side 1cat backup.iso | pv -b &gt; nc -l 3333 Client side 1nc 192.168.0.1 3333 | pv -b &gt; backunp.iso ps: nc also can us">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-02-12T03:37:46.000Z">
-<meta property="article:modified_time" content="2023-02-12T04:13:34.479Z">
+<meta property="article:published_time" content="2023-02-12T03:41:47.000Z">
+<meta property="article:modified_time" content="2023-02-12T04:11:44.401Z">
 <meta property="article:author" content="xueping.you">
-<meta property="article:tag" content="shadowsocks">
-<meta property="article:tag" content="翻墙">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>shadowsocks-安装指南 - 天气有点热</title>
+  <title>linux远程文件传输命令 - 天气有点热</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="shadowsocks-安装指南"></span>
+            <span id="subtitle" data-typed-text="linux远程文件传输命令"></span>
           
         </div>
 
@@ -226,7 +226,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-12 11:37" pubdate>
+        <time datetime="2023-02-12 11:41" pubdate>
           2023年2月12日 中午
         </time>
       </span>
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.9k 字
+          2k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          33 分钟
+          18 分钟
         
       </span>
     
@@ -295,41 +295,37 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">shadowsocks-安装指南</h1>
+            <h1 style="display: none">linux远程文件传输命令</h1>
             
             
               <div class="markdown-body">
                 
-                <p>@<a href="%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="1-购买阿里云主机"><a href="#1-购买阿里云主机" class="headerlink" title="1.购买阿里云主机"></a>1.购买阿里云主机</h1><pre><code class="hljs">地区选择境外：香港
-配置可以都选择最低配
-需要公网ip
-</code></pre>
-<h1 id="2-配置ssh登录主机"><a href="#2-配置ssh登录主机" class="headerlink" title="2.配置ssh登录主机"></a>2.配置ssh登录主机</h1><pre><code class="hljs">https://zhuanlan.zhihu.com/p/54643053
-https://blog.csdn.net/liujiakunit/article/details/45849095
-</code></pre>
-<h1 id="3-环境安装"><a href="#3-环境安装" class="headerlink" title="3.环境安装"></a>3.环境安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">git:<br>yum install git<br><br>apt-get:<br>curl https://raw.githubusercontent.com/dvershinin/apt-get-centos/master/apt-get.sh -o /usr/local/bin/apt-get <br><br>python:<br>apt-get install python36<br><br>pip <br>apt-get install python3-pip<br><br>环境准备:<br>yum install gcc gettext autoconf libtool automake make pcre-devel asciidoc xmlto c-ares-devel libev-devel libsodium-devel mbedtls-devel -y<br><br>备注：上面执行ok如下可以不做<br>安装 pcre<br>yum install gcc-c++<br>wget    https://netix.dl.sourceforge.net/project/pcre/pcre/8.40/pcre-8.40.tar.gz<br>tar -zxvf   pcre-8.40.tar.gz<br>make  &amp;&amp; make install <br>https://www.jianshu.com/p/2eb60806af9e<br><br>安装 c-ares<br>yum install c-ares<br></code></pre></td></tr></table></figure>
+                <h1 id="How-to-copy-file-to-local-system"><a href="#How-to-copy-file-to-local-system" class="headerlink" title="How to copy file to local system?"></a>How to copy file to local system?</h1><p>##Use nc(NetCat) Command （Not Security）<br><strong>Server side</strong></p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">cat backup.iso <span class="hljs-string">| pv -b &gt; nc -l 3333</span><br></code></pre></td></tr></table></figure>
+<p><strong>Client side</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nc</span> <span class="hljs-number">192.168.0.1</span> <span class="hljs-number">3333</span> | pv -b &gt; backunp.iso<br></code></pre></td></tr></table></figure>
+<p><strong>ps: nc also can use for port scanning</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs vim">#It may <span class="hljs-keyword">be</span> useful <span class="hljs-keyword">to</span> know which ports are <span class="hljs-keyword">open</span> <span class="hljs-built_in">and</span> running services <span class="hljs-keyword">on</span> <span class="hljs-keyword">a</span> target machine. the -<span class="hljs-keyword">z</span> flag can <span class="hljs-keyword">be</span> used <span class="hljs-keyword">to</span> tell nc <span class="hljs-keyword">to</span> report <span class="hljs-keyword">open</span> ports,ranther than initiate <span class="hljs-keyword">a</span> connection.<br><br>nc -zv host.example.<span class="hljs-keyword">com</span> <span class="hljs-number">80</span> <span class="hljs-number">20</span> <span class="hljs-number">22</span><br><br>&gt;nc: connect <span class="hljs-keyword">to</span> host.example.<span class="hljs-keyword">com</span> <span class="hljs-number">80</span> (tcp) failed: Connection refused<br>&gt;nc: connect <span class="hljs-keyword">to</span> host.example.<span class="hljs-keyword">com</span> <span class="hljs-number">20</span> (tcp) failed: Connection refused<br>&gt;Connection <span class="hljs-keyword">to</span> host.example.<span class="hljs-keyword">com</span> port [tcp/ssh] succeeded!<br><br>#nc also <span class="hljs-keyword">be</span> useful <span class="hljs-keyword">to</span> know which server software <span class="hljs-keyword">is</span> running<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;QUIT&#x27;</span> | nc host.example.<span class="hljs-keyword">com</span> <span class="hljs-number">20</span>-<span class="hljs-number">30</span><br><br>&gt;SSH-<span class="hljs-number">1.99</span>-OpenSSH_3.<span class="hljs-number">6.1</span>p2 Protocol mismatch.<br>&gt;<span class="hljs-number">220</span> host.example.<span class="hljs-keyword">com</span> IMS SMTP Receiver Version <span class="hljs-number">0.84</span> Ready<br><br></code></pre></td></tr></table></figure>
+<p>##Use scp Command<br><strong>Copy your file to target marchine</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">scp <span class="hljs-keyword">file</span>.foo user@<span class="hljs-keyword">target</span>.com:<span class="hljs-keyword">file</span>.foo<br></code></pre></td></tr></table></figure>
+<p><strong>Copy target marchine’s file to local</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">scp user@<span class="hljs-keyword">target</span>.com:<span class="hljs-keyword">file</span>.foo <span class="hljs-keyword">file</span>.foo<br></code></pre></td></tr></table></figure>
+<p>##Use ssh Command<br><strong>To remote host</strong></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">cat</span> localfile.<span class="hljs-keyword">conf</span> | ssh user@hostname &#x27;<span class="hljs-keyword">cat</span> -&gt; /tmp/<span class="hljs-keyword">file</span>.<span class="hljs-keyword">conf</span>&#x27;<br></code></pre></td></tr></table></figure>
+<p><strong>From remote host</strong></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata">ssh user@hostname &#x27;<span class="hljs-keyword">cat</span> /tmp/<span class="hljs-keyword">file</span>.<span class="hljs-keyword">conf</span>&#x27; &gt; /tmp/<span class="hljs-keyword">file</span>.<span class="hljs-keyword">conf</span><br></code></pre></td></tr></table></figure>
+<p>##Use sftp Command<br><strong>same as ftp command</strong></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sftp</span> username<span class="hljs-variable">@remote_hostname_or_IP</span><br></code></pre></td></tr></table></figure>
+<p>##Use sshsf Mount Remote File System Over SSH<br><code>scp sftp nc allow us to copy files easily and securely between these accounts, But, what if we don&#39;t want to copy the files to our local system before using them? Normally, this would be a good place for traditional network filesystem, Unfortunately, setting up these network filesystems requires administrator access on both systems. Luckily, as long as you have SSH access, you can use SSHFS to mount and use remote directory trees as if they were local.</code><br><strong>Install sshfs</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-built_in">get</span> install sshfs<br></code></pre></td></tr></table></figure>
+<p><strong>Mounting the remote file system</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">cd <span class="hljs-variable">$HOME</span><br>sudo mkdir <span class="hljs-regexp">/mnt/</span>droplte &lt; -- replace <span class="hljs-string">&#x27;droplet&#x27;</span> whatever you prefer<br>sudo sshfs -o allow_other, defer_permissions root@remotehost:<span class="hljs-regexp">/ /m</span>nt/droplet<br></code></pre></td></tr></table></figure>
+<p><strong>Unmounting the remote file system</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo umount <span class="hljs-regexp">/mnt/</span>droplet<br></code></pre></td></tr></table></figure>
+<p><strong>Permanently mounting the remote file system</strong><br><code>This would set a mount point that would persist through restart of both your local machine and droplets</code></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gradle">sudo nano <span class="hljs-regexp">/etc/</span>fstab &lt;-- edit the <span class="hljs-regexp">/etc/</span>fstab <span class="hljs-keyword">file</span> with a text editor<br>sshfs#root@remotehost:<span class="hljs-regexp">/ /m</span>nt/droplet<br></code></pre></td></tr></table></figure>
 
-<h1 id="4-安装Shadowsocks"><a href="#4-安装Shadowsocks" class="headerlink" title="4.安装Shadowsocks"></a>4.安装Shadowsocks</h1><h2 id="4-1-安装-shadowsocks"><a href="#4-1-安装-shadowsocks" class="headerlink" title="4.1.安装 shadowsocks"></a>4.1.安装 shadowsocks</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install git+https://github.com/shadowsocks/shadowsocks.git@master<br>配置启动文件<br>&#123;<br>		 	<span class="hljs-string">&quot;server&quot;</span>:<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<br>			<span class="hljs-string">&quot;local_port&quot;</span>:1080,<br>			<span class="hljs-string">&quot;server_port&quot;</span>:<span class="hljs-string">&quot;xxxx&quot;</span>,<br>			<span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;xxxxxxx&quot;</span>,<br>		 	<span class="hljs-string">&quot;timeout&quot;</span>:300,<br>			<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-string">&quot;aes-256-gcm&quot;</span>,<br>		 	<span class="hljs-string">&quot;fast_open&quot;</span>: <span class="hljs-literal">false</span>,<br>			<span class="hljs-string">&quot;plugin&quot;</span>:<span class="hljs-string">&quot;obfs-server&quot;</span>,<br>			<span class="hljs-string">&quot;plugin_opts&quot;</span>:<span class="hljs-string">&quot;obfs-http&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="4-2-或者-shadowsocks-libev（推荐）"><a href="#4-2-或者-shadowsocks-libev（推荐）" class="headerlink" title="4.2.或者 shadowsocks-libev（推荐）"></a>4.2.或者 shadowsocks-libev（推荐）</h2><pre><code class="hljs">    参见（https://surginsy.top/post/2020-09-16centos%E5%BB%BA%E7%AB%8Bss/）
-    
-</code></pre>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/shadowsocks/shadowsocks-libev.git<br><span class="hljs-built_in">cd</span> shadowsocks-libev<br>git submodule update --init<br>./autogen.sh &amp;&amp; ./configure --disable-documentation &amp;&amp; make<br>sudo make install<br></code></pre></td></tr></table></figure>
-<h2 id="4-3配置"><a href="#4-3配置" class="headerlink" title="4.3配置"></a>4.3配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>配置文件：<br>sudo <span class="hljs-built_in">mkdir</span> /etc/shadowsocks-libev<br>sudo vi /etc/shadowsocks-libev/config.json <br>内容：<br>&#123;<br> 	<span class="hljs-string">&quot;server&quot;</span>:<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<br>	<span class="hljs-string">&quot;local_port&quot;</span>:1080,<br>	<span class="hljs-string">&quot;server_port&quot;</span>:<span class="hljs-string">&quot;xxxx&quot;</span>,<br>	<span class="hljs-string">&quot;password&quot;</span>:<span class="hljs-string">&quot;xxxxxxx&quot;</span>,<br> 	<span class="hljs-string">&quot;timeout&quot;</span>:300,<br>	<span class="hljs-string">&quot;method&quot;</span>:<span class="hljs-string">&quot;aes-256-gcm&quot;</span>,<br> 	<span class="hljs-string">&quot;fast_open&quot;</span>: <span class="hljs-literal">false</span>,<br>	<span class="hljs-string">&quot;plugin&quot;</span>:<span class="hljs-string">&quot;obfs-server&quot;</span>,<br>	<span class="hljs-string">&quot;plugin_opts&quot;</span>:<span class="hljs-string">&quot;obfs-http&quot;</span><br>&#125;<br><br>命令启动：<br>前端启动：ssserver -c /etc/shadowsocks.json；<br>后端启动：ssserver -c /etc/shadowsocks.json -d start；<br>停止：ssserver -c /etc/shadowsocks.json -d stop；<br><br>service启动：<br>创建Shadowsocks-libev.service配置文件<br>sudo vi /etc/systemd/system/shadowsocks.service<br>内容：<br>[Unit]<br>Description=Shadowsocks Server<br>After=network.target<br><br>[Service]<br>ExecStart=/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u<br>Restart=on-abort<br><br>[Install]<br>WantedBy=multi-user.target<br><br>启动(可以通过systemctl status 查看)：<br>systemctl start shadowsocks<br></code></pre></td></tr></table></figure>
-<p>备注：如果&#x2F;usr&#x2F;bin&#x2F;ss-server不存在可以尝试 ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;ss-server &#x2F;usr&#x2F;bin</p>
-<h2 id="4-4-启动obfs-server进程"><a href="#4-4-启动obfs-server进程" class="headerlink" title="4.4.启动obfs-server进程"></a>4.4.启动obfs-server进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash">可以先手动启动Telnet验证端口看是否可以用：<br>obfs-server -s 0.0.0.0 -p bbbb --obfs http -r 127.0.0.1:xxxx<br><br>通过service方式启动：<br>创建<br>/etc/systemd/system/obfs-server.service<br>内容：<br>[Unit]<br>Description=obfs-server<br>Documentation=https://obfsf.org/en/<br>After=network.target<br><br>[Service]<br>Type=simple<br>ExecStart=obfs-server -s 0.0.0.0 -p bbbb --obfs http -r 127.0.0.1:xxxx<br>Restart=on-abort<br><br>[Install]<br>WantedBy=multi-user.target<br><br>启动(可以通过systemctl status 查看)：<br>systemctl start  obfs-server<br><br></code></pre></td></tr></table></figure>
-<p>备注：<br>        1.如果 &#x2F;user&#x2F;bin&#x2F;obfs-server不存在 可以尝试ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;obfs-server &#x2F;usr&#x2F;bin<br>        2.obfs-server 和 shadowsocks 的 ip 都配置为0.0.0.0</p>
-<h1 id="5-阿里云主机配置shadowsocks-端口转发规则"><a href="#5-阿里云主机配置shadowsocks-端口转发规则" class="headerlink" title="5.阿里云主机配置shadowsocks 端口转发规则"></a>5.阿里云主机配置shadowsocks 端口转发规则</h1><pre><code class="hljs">涉及到的端口都配置一下转发规则
-</code></pre>
-<h1 id="6-shadowsocks-client-配置"><a href="#6-shadowsocks-client-配置" class="headerlink" title="6.shadowsocks client 配置"></a>6.shadowsocks client 配置</h1><pre><code class="hljs">ip:阿里公网ip
-port:obfs 端口，如上的bbbb
-password:shadowsocks密码
-加密方法：shadowsocks对应
-插件：simple-obfs
-插件参数：obfs=http
-</code></pre>
-<h1 id="7-相关网页"><a href="#7-相关网页" class="headerlink" title="7.相关网页"></a>7.相关网页</h1><p><a target="_blank" rel="noopener" href="https://zhcexo.com/2018/08/16/how-to-install-simple-obfs/">https://zhcexo.com/2018/08/16/how-to-install-simple-obfs/</a><br><a target="_blank" rel="noopener" href="https://www.zhanggaoyuan.com/article/4f7e349a.html">https://www.zhanggaoyuan.com/article/4f7e349a.html</a><br><a target="_blank" rel="noopener" href="https://surginsy.top/post/2020-09-16centos%E5%BB%BA%E7%AB%8Bss/">https://surginsy.top/post/2020-09-16centos%E5%BB%BA%E7%AB%8Bss/</a><br><a target="_blank" rel="noopener" href="https://www.meirenji.info/2019/03/19/%E5%AE%89%E8%A3%85-shadowsocks-libev%E5%90%AF%E7%94%A8-obfs-%E6%B7%B7%E6%B7%86/">https://www.meirenji.info/2019/03/19/%E5%AE%89%E8%A3%85-shadowsocks-libev%E5%90%AF%E7%94%A8-obfs-%E6%B7%B7%E6%B7%86/</a><br><a target="_blank" rel="noopener" href="https://732200.xyz/blog/3.html">https://732200.xyz/blog/3.html</a><br><a target="_blank" rel="noopener" href="https://github.com/shadowsocks/simple-obfs">https://github.com/shadowsocks/simple-obfs</a><br><a target="_blank" rel="noopener" href="https://pdf-lib.org/Home/Details/2788">https://pdf-lib.org/Home/Details/2788</a> libsodium失败可以尝试这个方式<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xukai871105/article/details/72795126">https://blog.csdn.net/xukai871105/article/details/72795126</a> mbedtls 安装失败可以尝试这个方法</p>
-<h1 id="8-其他方法"><a href="#8-其他方法" class="headerlink" title="8.其他方法"></a>8.其他方法</h1><p>使用v2ray配置代理：<a target="_blank" rel="noopener" href="https://zwc365.com/hide/shadowsocks-v2ray-plugin.html">https://zwc365.com/hide/shadowsocks-v2ray-plugin.html</a></p>
+
 
                 
               </div>
@@ -348,7 +344,7 @@ password:shadowsocks密码
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%9C%BA%E5%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">机场网络</a>
+  <a href="/categories/shell/" class="category-chain-item">shell</a>
   
   
 
@@ -363,9 +359,9 @@ password:shadowsocks密码
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/shadowsocks/">#shadowsocks</a>
+        <a href="/tags/linux/">#linux</a>
       
-        <a href="/tags/%E7%BF%BB%E5%A2%99/">#翻墙</a>
+        <a href="/tags/shell/">#shell</a>
       
     </div>
   
@@ -377,8 +373,8 @@ password:shadowsocks密码
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>shadowsocks-安装指南</div>
-      <div>http://example.com/2023/02/12/shadowsocks-安装指南/</div>
+      <div>linux远程文件传输命令</div>
+      <div>http://example.com/2023/02/12/linux远程文件传输命令/</div>
     </div>
     <div class="license-meta">
       
@@ -422,7 +418,7 @@ password:shadowsocks密码
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/12/%E5%86%92%E6%B3%A1%E7%AE%97%E6%B3%95-%E5%BD%92%E6%A1%A3/" title="Mysql何登成文章笔记">
+                      <a href="/2023/02/12/Mysql%E4%BD%95%E7%99%BB%E6%88%90%E6%96%87%E7%AB%A0%E7%AC%94%E8%AE%B0/" title="Mysql何登成文章笔记">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Mysql何登成文章笔记</span>
                         <span class="visible-mobile">上一篇</span>
@@ -432,8 +428,8 @@ password:shadowsocks密码
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/12/Spring%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB-01/" title="Spring源码阅读-01">
-                        <span class="hidden-mobile">Spring源码阅读-01</span>
+                      <a href="/2023/02/12/%E5%86%92%E6%B3%A1%E7%AE%97%E6%B3%95-%E5%BD%92%E6%A1%A3/" title="Mysql何登成文章笔记">
+                        <span class="hidden-mobile">Mysql何登成文章笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
