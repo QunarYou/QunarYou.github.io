@@ -203,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="[object Object]"></span>
+            <span id="subtitle" data-typed-text="人生就是体验的过程，很多时候你后悔的，往往是那些你该做却没有完成的事情"></span>
           
         </div>
 
@@ -989,7 +989,37 @@ setInterval("createtime()", 250);
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        typing(text);
+        jQuery.ajax({
+          type: 'GET',
+          url: 'https://v1.hitokoto.cn/?c=c&amp;c=d&amp;c=i',
+          headers: {},
+          dataType: 'json',
+          success: function(result) {
+            var apiText;
+            if (result) {
+              var keys = 'hitokoto'.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of keys) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  apiText = value;
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+            }
+            apiText ? typing(apiText) : typing(text);
+          },
+          error: function(xhr, status, error) {
+            if (error) {
+              console.error('Failed to request https://v1.hitokoto.cn/?c=c&amp;c=d&amp;c=i:', error);
+            }
+            typing(text);
+          }
+        })
       
     })(window, document);
   </script>
