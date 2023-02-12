@@ -24,7 +24,7 @@
 <meta property="og:description" content="k-近邻算法概述：k-近邻算法采用测量不同特征值之间的距离方法进行分类优点：精度高、对于异常值不敏感，无数据输入假定缺点：计算复杂度高，空间复杂度高,并且它没有办法各处基础数据的一些内部信息数据。算法描述：存在一个准确的数据集合样本，称作训练样本集，样本集合中每个item都附带自己所属分类标签。当需要判断新数据的分类是，只需要计算特征数据和样本数据中最相似的分类标签，选择k个最相似的标签，k个标签">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-12T03:41:47.000Z">
-<meta property="article:modified_time" content="2023-02-12T14:26:36.286Z">
+<meta property="article:modified_time" content="2023-02-12T14:28:57.131Z">
 <meta property="article:author" content="xueping.you">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="机器学习">
@@ -70,7 +70,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"TdrVcapVuls4IKcRyOwNfec7-gzGzoHsz","app_key":"Hhrj9GvTiZEnqUI94ePVj1D2","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"always","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"TdrVcapVuls4IKcRyOwNfec7-gzGzoHsz","app_key":"Hhrj9GvTiZEnqUI94ePVj1D2","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
